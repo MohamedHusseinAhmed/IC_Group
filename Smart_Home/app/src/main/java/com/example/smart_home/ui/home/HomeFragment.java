@@ -348,20 +348,6 @@ public class HomeFragment extends Fragment {
 
 
 
-    public static void updateText(Activity act, String resID)
-    {
-
-        TextView loadingText = (TextView) act.findViewById(R.id.textView2);
-        act.runOnUiThread(new Runnable()
-        {
-            public void run()
-            {
-                loadingText.setText(resID);
-
-            }
-
-        });
-    }
     public void check_lamps(final String name) {
         // Tag used to cancel the request
         String tag_string_req = "lamp_state";
@@ -420,8 +406,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(getActivity(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         }) {

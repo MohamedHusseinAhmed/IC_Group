@@ -7,71 +7,51 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.example.smart_home.Album;
 import com.example.smart_home.AlbumsAdapter;
 import com.example.smart_home.R;
 import com.example.smart_home.adapter.TabAdapter;
-import com.example.smart_home.app.AppConfig;
-import com.example.smart_home.app.AppController;
-import com.example.smart_home.ui.home.HomeFragment;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.example.smart_home.adapter.UserAdapter;
+import com.example.smart_home.model.User;
 import com.google.android.material.tabs.TabLayout;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class GalleryFragment extends Fragment {
-TextView motion1,alert1;
-    private TabAdapter adapter;
+public class AlbumsRecycler extends Fragment {
+
+    private RecyclerView recyclerView;
+    private UserAdapter adapter;
+    private List<User> userList;
+
     private TabLayout tableLayout;
     private ViewPager viewPager;
-    private RecyclerView recyclerView;
+
     private AlbumsAdapter adapter1;
     private List<Album> albumList;
-   public  static Thread thread2;
-    CardView card;
-    private GalleryViewModel galleryViewModel;
-    public TextView textView;
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tabs, container, false);
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
 
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
 
-        card=   view.findViewById(R.id.card_view);
-        Toolbar toolbar =   view.findViewById(R.id.toolbar);
-  //      setSupportActionBar(toolbar);
-
-     //   initCollapsingToolbar();
-/*
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
         albumList = new ArrayList<>();
@@ -79,32 +59,16 @@ TextView motion1,alert1;
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.addItemDecoration(new AlbumsRecycler.GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter1);
-*/
-      //  prepareAlbums();
 
-        viewPager = view.findViewById(R.id.request_orders_view_pager);
-        tableLayout = view.findViewById(R.id.request_orders_tabs);
-
-        adapter = new TabAdapter(getFragmentManager());
-        adapter.addFragment(new AlbumsRecycler(), "Tab 1");
-       adapter.addFragment(new UserRecycler1(), "Tab 2");
-      adapter.addFragment(new UserRecycler1(), "Tab 3");
-
-        viewPager.setAdapter(adapter);
-
-
-        tableLayout.setupWithViewPager(viewPager);
-
-
+        prepareAlbums();
         return view;
     }
 
-    /**
-     * Adding few albums for testing
-     */
+
+
     private void prepareAlbums() {
         int[] covers = new int[]{
                 R.drawable.ic_launcher_background,
@@ -117,7 +81,7 @@ TextView motion1,alert1;
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,};
+                R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,};
 
         Album a = new Album("Lamp1", 13, covers[1]);
         albumList.add(a);
@@ -152,8 +116,14 @@ TextView motion1,alert1;
 
         a = new Album("Lamp11", 17, covers[9]);
         albumList.add(a);
+        a = new Album("Lamp11", 17, covers[9]);
+        albumList.add(a);
 
-        adapter.notifyDataSetChanged();
+        a = new Album("Lamp11", 17, covers[9]);
+        albumList.add(a);
+
+
+        adapter1.notifyDataSetChanged();
     }
 
     /**
@@ -200,6 +170,7 @@ TextView motion1,alert1;
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
+
 
 
 }

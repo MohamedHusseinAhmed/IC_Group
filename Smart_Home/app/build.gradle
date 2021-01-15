@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.smart_home"
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -43,8 +43,10 @@ dependencies {
      implementation 'com.mcxiaoke.volley:library-aar:1.0.0'
 
 
-
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
      androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "androidx.cardview:cardview:1.0.0"
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
