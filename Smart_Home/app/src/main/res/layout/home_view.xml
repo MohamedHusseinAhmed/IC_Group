@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/home_background"
+    android:fillViewport="false">
+
+<AbsoluteLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ android:background="@drawable/home_background"
+    android:padding="@dimen/activity_horizontal_margin">
+
+
+    <ImageButton
+        android:id="@+id/homeBtn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="40dp"
+        android:layout_y="60dp"
+        android:background="@drawable/home_logo" />
+
+    <ImageButton
+        android:id="@+id/remote"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="40dp"
+        android:layout_y="200dp"
+        android:background="@drawable/remote" />
+
+    <ImageButton
+        android:id="@+id/air"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="206dp"
+        android:layout_y="350dp"
+        android:background="@drawable/air" />
+
+    <ImageButton
+        android:id="@+id/light"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="220dp"
+        android:layout_y="200dp"
+        android:background="@drawable/lamp" />
+
+    <ImageButton
+        android:id="@+id/setting"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="130dp"
+        android:layout_y="490dp"
+        android:background="@drawable/set" />
+
+    <ImageButton
+        android:id="@+id/secure"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="228dp"
+        android:layout_y="60dp"
+        android:background="@drawable/secure" />
+
+    <ImageButton
+        android:id="@+id/cam"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_x="51dp"
+        android:layout_y="350dp"
+        android:background="@drawable/intercom" />
+
+
+</AbsoluteLayout>
+</ScrollView>

@@ -4,7 +4,15 @@ buildscript {
         google()
         jcenter()
     }
-
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.springframework.org/release"
+        }
+        maven {
+            url "https://maven.restlet.com"
+        }
+    }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
 
@@ -20,6 +28,8 @@ allprojects {
         jcenter()
         maven { url "https://maven.google.com" }
     }}
+
+
 
 
 task clean(type: Delete) {

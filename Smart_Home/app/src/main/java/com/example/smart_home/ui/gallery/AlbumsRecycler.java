@@ -73,15 +73,8 @@ public class AlbumsRecycler extends Fragment {
         int[] covers = new int[]{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,};
+                R.drawable.ic_launcher_background
+                };
 
         Album a = new Album("Lamp1", 13, covers[1]);
         albumList.add(a);
@@ -92,35 +85,6 @@ public class AlbumsRecycler extends Fragment {
         a = new Album("Lamp3", 11, covers[2]);
         albumList.add(a);
 
-        a = new Album("Lamp4", 12, covers[3]);
-        albumList.add(a);
-
-        a = new Album("Lamp5", 14, covers[4]);
-        albumList.add(a);
-
-        a = new Album("Lamp6", 1, covers[5]);
-        albumList.add(a);
-
-        a = new Album("Lamp7", 11, covers[6]);
-        albumList.add(a);
-
-        a = new Album("Lamp8", 14, covers[7]);
-        albumList.add(a);
-
-        a = new Album("Lamp9", 11, covers[8]);
-        albumList.add(a);
-
-        a = new Album("Lamp10", 17, covers[9]);
-        albumList.add(a);
-
-
-        a = new Album("Lamp11", 17, covers[9]);
-        albumList.add(a);
-        a = new Album("Lamp11", 17, covers[9]);
-        albumList.add(a);
-
-        a = new Album("Lamp11", 17, covers[9]);
-        albumList.add(a);
 
 
         adapter1.notifyDataSetChanged();

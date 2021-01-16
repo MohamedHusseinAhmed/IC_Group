@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +56,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
       Switch s1,s2,s3;
+    ImageButton b1,b2,b3;
 
   public static   Thread thread1;
     TextView et;
@@ -70,15 +72,13 @@ public class HomeFragment extends Fragment {
    //     final TextView textView = root.findViewById(R.id.text_home);
 
 
-        final Button b1 = root.findViewById(R.id.button2);
+         b1 = root.findViewById(R.id.lamp1);
         final Button on = root.findViewById(R.id.on);
         final Button off = root.findViewById(R.id.off);
-         s1 = root.findViewById(R.id.switch1);
-        final Button b3 = root.findViewById(R.id.button4);
-        final Button b2 = root.findViewById(R.id.button3);
-         s2 = root.findViewById(R.id.switch2);
-         s3 = root.findViewById(R.id.switch3);
-       // check_lamps("lamp1");
+               s1 = root.findViewById(R.id.switch1);
+         b3 = root.findViewById(R.id.lamp3);
+      b2 = root.findViewById(R.id.lamp2);
+
 
 
         on.setOnClickListener(new View.OnClickListener() {
@@ -130,59 +130,24 @@ public class HomeFragment extends Fragment {
           if(!thread1.isAlive());
           thread1.start();
 
-        s1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!s1.isChecked()) {
 
-                    s1.setText("OFF");
-                }
-                else {
-
-                    s1.setText("ON");
-                }
-            }
-        });
-
-        s2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!s2.isChecked()) {
-
-                    s2.setText("OFF");
-                }
-                else {
-
-                    s2.setText("ON");
-                }
-            }
-        });
-        s3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!s3.isChecked()) {
-
-                    s3.setText("OFF");
-                }
-                else {
-
-                    s3.setText("ON");
-                }
-            }
-        });
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!s1.isChecked()) {
-                    s1.setChecked(true);
-                    s1.setText("ON");
+
+
+                if( ((Boolean)b1.getTag())==false ){
+
+                    b1.setImageResource(R.drawable.on);
                     set_lamps("lamp1","ON");
+                    b1.setTag(new Boolean(true));
 
                 }
                 else {
-                    s1.setChecked(false);
-                    s1.setText("OFF");
+
+                    b1.setImageResource(R.drawable.off);
                     set_lamps("lamp1","OFF");
+                    b1.setTag(new Boolean(false));
 
                 }
             }
@@ -190,119 +155,49 @@ public class HomeFragment extends Fragment {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!s2.isChecked()) {
-                    s2.setChecked(true);
-                    s2.setText("ON");
+
+
+                if( ((Boolean)b2.getTag())==false ){
+
+                    b2.setImageResource(R.drawable.on);
                     set_lamps("lamp2","ON");
+                    b2.setTag(new Boolean(true));
+
                 }
                 else {
-                    s2.setChecked(false);
-                    s2.setText("OFF");
+
+                    b2.setImageResource(R.drawable.off);
                     set_lamps("lamp2","OFF");
+                    b2.setTag(new Boolean(false));
                 }
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!s3.isChecked()) {
-                    s3.setChecked(true);
-                    s3.setText("ON");
+
+
+                if( ((Boolean)b3.getTag())==false ){
+
+                    b3.setImageResource(R.drawable.on);
                     set_lamps("lamp3","ON");
+                    b3.setTag(new Boolean(true));
                 }
                 else {
-                    s3.setChecked(false);
-                    s3.setText("OFF");
+
+                    b3.setImageResource(R.drawable.off);
                     set_lamps("lamp3","OFF");
+                    b3.setTag(new Boolean(false));
                 }
             }
         });
 
-        check_lamps("lamp1");
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
 
-                s1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(!s1.isChecked()) {
 
-                            s1.setText("OFF");
-                        }
-                        else {
-
-                            s1.setText("ON");
-                        }
-                    }
-                });
-
-                s2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(!s2.isChecked()) {
-
-                            s2.setText("OFF");
-                        }
-                        else {
-
-                            s2.setText("ON");
-                        }
-                    }
-                });
-                s3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(!s3.isChecked()) {
-
-                            s3.setText("OFF");
-                        }
-                        else {
-
-                            s3.setText("ON");
-                        }
-                    }
-                });
-                b1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(!s1.isChecked()) {
-                            s1.setChecked(true);
-                            s1.setText("ON");
-                        }
-                        else {
-                            s1.setChecked(false);
-                            s1.setText("OFF");
-                        }
-                    }
-                });
-                b2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(!s2.isChecked()) {
-                            s2.setChecked(true);
-                            s2.setText("ON");
-                        }
-                        else {
-                            s2.setChecked(false);
-                            s2.setText("OFF");
-                        }
-                    }
-                });
-                b3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(!s3.isChecked()) {
-                            s3.setChecked(true);
-                            s3.setText("ON");
-                        }
-                        else {
-                            s3.setChecked(false);
-                            s3.setText("OFF");
-                        }
-                    }
-                });
                 //textView.setText(s);
             }
         });
@@ -310,18 +205,21 @@ public class HomeFragment extends Fragment {
     }
 
 
-    public  void handle(String state , Switch s)
+    public  void handle(String state , ImageButton s)
     {
 
-        s.setText(state);
-        if(s.getText().toString().contains("OFF"))
+        if(state.contains("OFF"))
         {
-            s.setChecked(false);
+            s.setImageResource(R.drawable.off);
+
+            s.setTag(new Boolean(false));
 
         }
-        else if(s.getText().toString().contains("ON")) {
+        else if(state.contains("ON")) {
 
-            s.setChecked(true);
+            s.setImageResource(R.drawable.on);
+
+            s.setTag(new Boolean(true));
         }
 
       //  return s;
@@ -375,15 +273,15 @@ public class HomeFragment extends Fragment {
 
                      // Toast.makeText(getActivity(),state, Toast.LENGTH_LONG).show();
                         if(name.contains("lamp1")){
-                       handle(state,s1);
+                       handle(state,b1);
 
                         } if(name.contains("lamp2"))
                         {
-                            handle(state,s2);
+                            handle(state,b2);
                                                 }
                         if(name.contains("lamp3"))
                         {
-                            handle(state,s3);
+                            handle(state,b3);
                         }
 
                     } else {

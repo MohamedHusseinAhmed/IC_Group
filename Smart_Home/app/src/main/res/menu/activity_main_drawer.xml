@@ -4,18 +4,48 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/icons8_light_64"
+            android:icon="@drawable/smart_home"
             android:title="@string/menu_home" />
+
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_home_view"
+            android:icon="@drawable/smart_home"
+            android:title="@string/menu_home_view" />
+        <item
+            android:id="@+id/Lighting"
+            android:icon="@drawable/icons8_light_64"
+            android:title="@string/menu_lighting" />
+        <item
+            android:id="@+id/ac"
+            android:icon="@drawable/ac_btn"
+            android:title="@string/menu_AC" />
+
+        <item
+            android:id="@+id/profiles"
+            android:icon="@drawable/ic_menu_alert"
+            android:title="@string/menu_profiles" />
+        <item
+            android:id="@+id/devices"
+            android:icon="@drawable/devices"
+            android:title="@string/menu_devices" />
+
+
+        <item
+            android:id="@+id/security"
             android:icon="@drawable/ic_menu_alert"
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/menu_Intercom" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_Settings" />
 
     </group>
 </menu>

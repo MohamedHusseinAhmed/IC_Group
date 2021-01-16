@@ -53,8 +53,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlayActivity" android:screenOrientation="portrait">
-        </activity>
 
+        </activity>
+        <activity
+            android:name=".Splash.SplashScreen"
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activity.RegisterActivity"

@@ -27,6 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.smart_home.MainActivity;
 import com.example.smart_home.R;
+import com.example.smart_home.Splash.SplashScreen;
 import com.example.smart_home.app.AppConfig;
 import com.example.smart_home.app.AppController;
 import com.example.smart_home.helper.SQLiteHandler;
@@ -52,6 +53,9 @@ public class LoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_login);
 
         inputEmail = (EditText) findViewById(R.id.email2);
@@ -70,14 +74,17 @@ public class LoginActivity extends Activity {
         // Session manager
         session = new SessionManager(getApplicationContext());
 
+
         // Check if user is already logged in or not
        if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+
+            //Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            //startActivity(intent);
+           startActivity(new Intent(LoginActivity.this, SplashScreen.class));
+
             finish();
         }
-
         // Login button Click Event
         btnLogin.setOnClickListener(new View.OnClickListener() {
 

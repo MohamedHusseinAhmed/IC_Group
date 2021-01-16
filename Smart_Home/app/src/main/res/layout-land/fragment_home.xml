@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/home_background"
+    android:fillViewport="false">
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+
+        <Button
+            android:id="@+id/on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="340dp"
+            android:layout_x="322dp"
+
+
+            android:layout_y="328dp"
+            android:text="ON ALL" />
+
+        <Button
+            android:id="@+id/off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="380dp"
+            android:layout_marginTop="340dp"
+            android:layout_x="196dp"
+
+
+            android:layout_y="330dp"
+            android:text="OFF ALL" />
+
+        <ImageButton
+            android:id="@+id/lamp1"
+            android:layout_width="128dp"
+            android:layout_height="192dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_x="403dp"
+            android:layout_y="41dp"
+            android:src="@drawable/off"
+            android:text="lamp1" />
+
+        <ImageButton
+            android:id="@+id/lamp2"
+            android:layout_width="128dp"
+            android:layout_height="192dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_x="29dp"
+            android:layout_y="40dp"
+            android:src="@drawable/off"
+            android:text="lamp1" />
+
+        <ImageButton
+            android:id="@+id/lamp3"
+            android:layout_width="128dp"
+            android:layout_height="192dp"
+            android:layout_marginLeft="380dp"
+            android:layout_marginTop="30dp"
+            android:layout_x="216dp"
+            android:layout_y="40dp"
+            android:src="@drawable/off"
+            android:text="lamp1" />
+
+
+    </AbsoluteLayout>
+</ScrollView>

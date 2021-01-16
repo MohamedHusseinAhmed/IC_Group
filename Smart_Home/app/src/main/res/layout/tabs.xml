@@ -8,7 +8,7 @@
         android:id="@+id/request_orders_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_secondary"
+        android:background="#063F70"
         android:scrollIndicators="end"
         app:tabIndicatorColor="@color/black"
         app:tabMode="fixed" />

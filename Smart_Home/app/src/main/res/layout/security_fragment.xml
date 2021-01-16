@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_background"
+    tools:context=".ui.security.security_fragment">
+
+
+        <TextView
+            android:id="@+id/emergency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="180dp"
+            android:layout_y="454dp"
+            android:text="Emergency"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/fire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="219dp"
+            android:layout_y="551dp"
+            android:text="Fire"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/gas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="220dp"
+            android:layout_y="599dp"
+            android:text="Gas"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/motion_img3"
+            android:layout_width="40dp"
+            android:layout_height="27dp"
+            android:layout_x="126dp"
+            android:layout_y="608dp"
+            android:src="@drawable/safe"
+            android:tooltipText="w" />
+
+        <ImageView
+            android:id="@+id/motion_img2"
+            android:layout_width="40dp"
+            android:layout_height="27dp"
+            android:layout_x="126dp"
+            android:layout_y="559dp"
+            android:src="@drawable/safe"
+            android:tooltipText="w" />
+
+    <ImageView
+        android:id="@+id/motion_img"
+        android:layout_width="40dp"
+        android:layout_height="27dp"
+        android:layout_x="123dp"
+        android:layout_y="516dp"
+        android:src="@drawable/safe"
+        android:tooltipText="w" />
+
+    <ImageView
+            android:id="@+id/eme_img"
+            android:layout_width="40dp"
+            android:layout_height="27dp"
+            android:layout_x="121dp"
+            android:layout_y="462dp"
+            android:src="@drawable/safe"
+            android:tooltipText="w" />
+
+        <TextView
+            android:id="@+id/motion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="190dp"
+            android:layout_y="507dp"
+            android:text="Motion"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+
+    <ImageView
+        android:id="@+id/alert_img"
+        android:layout_width="213dp"
+        android:layout_height="145dp"
+        android:layout_x="95dp"
+        android:layout_y="55dp"
+
+        android:tooltipText="w" />
+
+    <TextView
+        android:id="@+id/alert_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="93dp"
+        android:layout_y="245dp"
+        android:text=" "
+        android:textColor="#149A14"
+        android:textSize="50dp" />
+</AbsoluteLayout>
