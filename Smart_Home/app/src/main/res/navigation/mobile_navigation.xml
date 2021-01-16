@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.example.smart_home.ui.homeview.homeview"
         android:label="@string/menu_home"
-        tools:layout="@layout/home_view" />
+        tools:layout="@layout/home_all_tabs" />
 
     <fragment
         android:id="@+id/Lighting"

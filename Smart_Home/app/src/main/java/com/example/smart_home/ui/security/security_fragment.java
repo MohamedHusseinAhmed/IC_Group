@@ -140,8 +140,6 @@ boolean w_found = false,a_found=false;
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(getActivity(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         }) {

@@ -66,17 +66,13 @@ TextView motion1,alert1;
 
         card=   view.findViewById(R.id.card_view);
         Toolbar toolbar =   view.findViewById(R.id.toolbar);
-
         viewPager = view.findViewById(R.id.request_orders_view_pager);
         tableLayout = view.findViewById(R.id.request_orders_tabs);
-
         adapter = new TabAdapter(getFragmentManager());
         adapter.addFragment(new  HomeFragment(), "Room 1");
         adapter.addFragment(new  AlbumsRecycler(), "Room 2");
 
         viewPager.setAdapter(adapter);
-
-
         tableLayout.setupWithViewPager(viewPager);
 
 

@@ -1,5 +1,6 @@
 package com.example.smart_home.ui.homeview;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -34,7 +37,13 @@ import com.example.smart_home.R;
 import com.example.smart_home.adapter.TabAdapter;
 import com.example.smart_home.app.AppConfig;
 import com.example.smart_home.app.AppController;
+import com.example.smart_home.defaultfragment.defaultfragment;
+import com.example.smart_home.ui.gallery.AlbumsRecycler;
+import com.example.smart_home.ui.gallery.GalleryFragment;
+import com.example.smart_home.ui.gallery.GalleryViewModel;
 import com.example.smart_home.ui.home.HomeFragment;
+import com.example.smart_home.ui.security.security_fragment;
+import com.example.smart_home.ui.slideshow.SlideshowFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
@@ -48,6 +57,8 @@ import java.util.List;
 import java.util.Map;
 
 public class homeview extends Fragment {
+    ImageView i;
+
     TextView motion1,alert1;
     private TabAdapter adapter;
     private TabLayout tableLayout;
@@ -57,11 +68,36 @@ public class homeview extends Fragment {
     private List<Album> albumList;
     public  static Thread thread2;
     CardView card;
-
+    private GalleryViewModel galleryViewModel;
     public TextView textView;
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.home_view, container, false);
+        View view = inflater.inflate(R.layout.home_tabs, container, false);
+
+
+
+         viewPager = view.findViewById(R.id.request_orders_view_pager1);
+        tableLayout = view.findViewById(R.id.request_orders_tabs1);
+        adapter = new TabAdapter(getFragmentManager());
+
+        adapter.addFragment(new  HomeFragment(), "Home");
+        adapter.addFragment(new defaultfragment(), "Home View");
+        adapter.addFragment(new GalleryFragment(), "Lighting");
+        adapter.addFragment(new defaultfragment(), "A/C");
+        adapter.addFragment(new defaultfragment(), "Profiles");
+        adapter.addFragment(new defaultfragment(), "Devices");
+        adapter.addFragment(new security_fragment(), "Security");
+
+
+
+         adapter.addFragment(new defaultfragment(), "Settings");
+
+
+        viewPager.setAdapter(adapter);
+        tableLayout.setupWithViewPager(viewPager);
+
 
 
 
