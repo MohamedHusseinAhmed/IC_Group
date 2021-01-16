@@ -1,7 +1,10 @@
 
 package com.example.smart_home.ui.security;
+import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.os.Vibrator;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -37,6 +40,7 @@ public class security_fragment extends Fragment {
     public static Thread thread2;
     private GalleryViewModel galleryViewModel;
     public TextView textView;
+    Vibrator v;
 boolean w_found = false,a_found=false;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -48,7 +52,7 @@ boolean w_found = false,a_found=false;
         emer = root.findViewById(R.id.eme_img);
         motion = root.findViewById(R.id.motion_img);
 
-
+          v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 
         thread2 = new Thread() {
             @Override
@@ -216,6 +220,15 @@ boolean w_found = false,a_found=false;
             alert_txt.setText("WARNING");
             alert_txt.setTextColor(Color.parseColor("#FD0000"));
 
+
+
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                //deprecated in API 26
+                v.vibrate(4000);
+            }
         }else
         {
 
@@ -223,6 +236,12 @@ boolean w_found = false,a_found=false;
             alert_txt.setText("Safe State");
             alert_txt.setTextColor(Color.parseColor("#149A14"));
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+v.cancel();
+            } else {
+                //deprecated in API 26
+                v.cancel();
+             }
         }
 
 

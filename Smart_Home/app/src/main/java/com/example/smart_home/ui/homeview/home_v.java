@@ -56,47 +56,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class homeview extends Fragment {
-    ImageView i;
-
-    TextView motion1,alert1;
-    private TabAdapter adapter;
-    private TabLayout tableLayout;
-    private ViewPager viewPager;
-    private RecyclerView recyclerView;
-    private AlbumsAdapter adapter1;
-    private List<Album> albumList;
-    public  static Thread thread2;
-    CardView card;
-    private GalleryViewModel galleryViewModel;
-    public TextView textView;
+public class home_v extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.home_tabs, container, false);
+        View view = inflater.inflate(R.layout.home_view, container, false);
 
-
-
-         viewPager = view.findViewById(R.id.request_orders_view_pager1);
-        tableLayout = view.findViewById(R.id.request_orders_tabs1);
-        adapter = new TabAdapter(getFragmentManager());
-
-        adapter.addFragment(new  home_v(), "Home");
-        adapter.addFragment(new defaultfragment(), "Home View");
-        adapter.addFragment(new GalleryFragment(), "Lighting");
-        adapter.addFragment(new defaultfragment(), "A/C");
-        adapter.addFragment(new defaultfragment(), "Profiles");
-        adapter.addFragment(new defaultfragment(), "Devices");
-        adapter.addFragment(new security_fragment(), "Security");
-
-
-
-         adapter.addFragment(new defaultfragment(), "Settings");
-
-
-        viewPager.setAdapter(adapter);
-        tableLayout.setupWithViewPager(viewPager);
 
 
 
